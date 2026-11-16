@@ -15,6 +15,14 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showResumeModal, setShowResumeModal] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
+  const [theme, setTheme] = useState(() =>
+    window.localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark'
+  );
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     if (!toastMessage) return;
@@ -39,9 +47,13 @@ export default function App() {
         }}
       />
 
-      <Navbar onOpenResume={() => setShowResumeModal(true)} />
+      <Navbar
+        onOpenResume={() => setShowResumeModal(true)}
+        theme={theme}
+        onToggleTheme={() => setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))}
+      />
 
-      <main id="top" className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-24 space-y-24">
+      <main id="top" className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-16 sm:pb-24 space-y-16 sm:space-y-24">
         <Hero onCopyEmail={handleCopyEmail} />
         <Projects onSelectProject={setSelectedProject} />
         <TechStack />

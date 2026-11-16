@@ -16,7 +16,7 @@ export default function Contact({ onCopyEmail, onNotify }) {
 
   return (
     <section id="contact" className="scroll-mt-24">
-      <div className="rounded-3xl bg-zinc-900/70 border border-zinc-800 p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="rounded-3xl bg-zinc-900/70 border border-zinc-800 p-4 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
         <div className="lg:col-span-5 space-y-5 flex flex-col justify-between">
           <div className="space-y-3">
             <span className="text-xs font-mono uppercase tracking-wider text-violet-400">Get In Touch</span>
@@ -74,13 +74,13 @@ export default function Contact({ onCopyEmail, onNotify }) {
         </div>
         <div className="lg:col-span-7">
           {formSubmitted ? (
-            <div className="h-full rounded-2xl bg-zinc-950 border border-violet-500/30 p-8 flex flex-col items-center justify-center text-center space-y-3">
+            <div className="h-full rounded-2xl bg-zinc-950 border border-violet-500/30 p-4 sm:p-8 flex flex-col items-center justify-center text-center space-y-3">
               <CheckCircle2 className="w-10 h-10 text-violet-400" />
               <h3 className="text-lg font-bold text-white">Thanks, {formState.name}!</h3>
               <p className="text-sm text-zinc-400 max-w-md">
                 Your message is ready. Choose WhatsApp or email to send it directly.
               </p>
-              <div className="flex flex-wrap gap-3 pt-2">
+              <div className="flex flex-wrap justify-center gap-3 pt-2">
                 <a
                   href={`https://wa.me/${PORTFOLIO_DATA.personal.whatsapp}?text=${encodeURIComponent(
                     `Hello, I'm ${formState.name} (${formState.email}).\n\n${formState.message}`
