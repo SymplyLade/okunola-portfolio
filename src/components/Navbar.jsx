@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Terminal, FileText, Menu, Moon, Sun, X } from 'lucide-react';
+import { FileText, Menu, Moon, Sun, X } from 'lucide-react';
+import profileImage from '../assets/akintomiwa.jpeg';
 
 export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,16 +11,16 @@ export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
     <header className="sticky top-0 z-40 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-16 flex items-center justify-between gap-3">
         <a
-          href="#top"
+          href="/"
           onClick={closeMobileMenu}
-          className="flex items-center gap-2.5 font-mono text-sm font-semibold tracking-tight text-zinc-100 hover:text-violet-400 transition-colors"
+          className="flex items-center rounded-full transition-opacity hover:opacity-80"
+          aria-label="Go to homepage"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-500/10 border border-violet-500/30 text-violet-400">
-            <Terminal className="w-4 h-4" />
-          </span>
-          <span>
-            akintomiwa<span className="text-violet-400">.dev</span>
-          </span>
+          <img
+            src={profileImage}
+            alt="Okunola Akintomiwa"
+            className="h-24 w-24 rounded-xl border border-violet-500/40 object-cover"
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-7 text-sm text-zinc-400">

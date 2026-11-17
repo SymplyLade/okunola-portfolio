@@ -73,6 +73,18 @@ export const PORTFOLIO_DATA = {
       repoUrl: 'https://github.com/Peskidoo2000',
       featured: false,
     },
+    {
+      id: 4,
+      title: 'Clevix',
+      category: 'Web Apps',
+      description: 'A web application available as a live deployment.',
+      impact: 'Explore the Clevix application online.',
+      architecture: [{ layer: 'Platform', tech: 'Clevix Web App' }],
+      tags: ['Web App'],
+      liveUrl: 'https://clevix-theta.vercel.app/',
+      repoUrl: 'https://github.com/Peskidoo2000',
+      featured: true,
+    },
   ],
 
   skills: [
