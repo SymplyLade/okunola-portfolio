@@ -1,6 +1,7 @@
 import React from 'react';
-import { X } from 'lucide-react';
+import { FileDown, X } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
+import resumePdf from '../assets/Okunola CV.pdf';
 
 export default function ResumeModal({ isOpen, onClose }) {
   if (!isOpen) return null;
@@ -60,14 +61,16 @@ export default function ResumeModal({ isOpen, onClose }) {
           ))}
         </div>
 
-        <div className="flex items-center justify-between pt-3 border-t border-zinc-800">
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-zinc-800">
           <span className="text-xs text-zinc-400">{personal.email}</span>
-          <button
-            onClick={() => window.print()}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-violet-500 hover:bg-violet-400 text-zinc-950 text-xs font-semibold cursor-pointer"
+          <a
+            href={resumePdf}
+            download="Okunola-Akintomiwa-CV.pdf"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-violet-500 hover:bg-violet-400 text-zinc-950 text-xs font-semibold"
           >
-            Print / Save PDF
-          </button>
+            <FileDown className="h-4 w-4" />
+            Download CV
+          </a>
         </div>
       </div>
     </div>
